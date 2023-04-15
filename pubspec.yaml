@@ -1,0 +1,6 @@
+name: dart_cliente
+
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+dependencies:
+  collection: ^1.17.1
