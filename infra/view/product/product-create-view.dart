@@ -1,6 +1,6 @@
 import 'dart:io';
-import '../../usecase/create-product-usecase.dart';
-import 'view.dart';
+import '../../../usecase/create-product-usecase.dart';
+import '../view.dart';
 
 class CreateProductView extends View {
   @override

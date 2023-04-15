@@ -1,8 +1,8 @@
 import 'dart:io';
 
-import '../../app/domain/product/entity.dart';
-import '../../usecase/list-product-usecase.dart';
-import 'view.dart';
+import '../../../app/domain/product/entity.dart';
+import '../../../usecase/list-product-usecase.dart';
+import '../view.dart';
 
 class ListProductView extends View {
   @override
@@ -13,7 +13,7 @@ class ListProductView extends View {
 
     for (Product product in products) {
       print(
-          '\n${product.id}\nNome: ${product.name};\nDescrição: ${product.description}\nValor: ${product.value} reais.\n');
+          '\n${product.id}\nNome: ${product.name};\nDescrição: ${product.description};\nValor: ${product.value} reais.\n');
     }
   }
 }

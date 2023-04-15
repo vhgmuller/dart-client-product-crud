@@ -1,9 +1,10 @@
 import '../app/domain/product/service.dart';
+import 'utils/constantsUtils.dart';
 
 class ProductFindByNameUseCase {
   execute(Map<String, dynamic> context) {
-    ProductService service = context['productService'];
-    String search = context['search'];
+    ProductService service = context[constantsUtils.PRODUCT_SERVICE];
+    String search = context[constantsUtils.SEARCH];
     return service.getByName(search);
   }
 }

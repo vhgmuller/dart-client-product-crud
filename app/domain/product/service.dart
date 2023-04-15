@@ -12,12 +12,12 @@ class ProductService {
     upgradeIdController();
   }
 
-  void delete(Product product) {
-    _products.removeWhere((listProduct) => listProduct.id == product.id);
+  void deleteById(int id) {
+    _products.removeWhere((listProduct) => listProduct.id == id);
   }
 
-  void update(Product product) {
-    _products[getProductArrayPositionById(product.id)] = product;
+  void updateById(int id, Product product) {
+    _products[getProductArrayPositionById(id)] = product;
   }
 
   List<Product> get getAll => _products;
@@ -47,7 +47,7 @@ class ProductService {
 }
 
 void main() {
- /* var service = ProductService();
+  /* var service = ProductService();
 
   print(service._products.length);
   service.insert(Product(1, 'João', 'joao@email.com', '123'));
