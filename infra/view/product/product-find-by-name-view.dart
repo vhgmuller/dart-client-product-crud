@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import '../../../app/domain/product/entity.dart';
-import '../../../usecase/find-by-name-product-usecase.dart';
+import '../../../app/domain/product/product-entity.dart';
+import '../../../usecase/product/find-by-name-product-usecase.dart';
 import '../view.dart';
 
 class ProductFindByNameView extends View {

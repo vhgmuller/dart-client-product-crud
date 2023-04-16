@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'view.dart';
-import '../view/product/product-menu-view.dart';
+import 'product/product-view.dart';
 
 class AppView extends View {
   @override
@@ -10,7 +10,7 @@ class AppView extends View {
     Stdin terminal = context['terminal'];
     while (option != 3) {
       menu();
-      print('Escolha uma das opções: ');
+      print('\nEscolha uma das opções: ');
       option = int.parse(terminal.readLineSync() ?? "0");
       executeOption(option, context);
     }

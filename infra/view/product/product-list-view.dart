@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import '../../../app/domain/product/entity.dart';
-import '../../../usecase/list-product-usecase.dart';
+import '../../../app/domain/product/product-entity.dart';
+import '../../../usecase/product/list-product-usecase.dart';
 import '../view.dart';
 
 class ListProductView extends View {

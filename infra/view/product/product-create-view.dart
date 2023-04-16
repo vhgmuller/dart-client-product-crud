@@ -1,5 +1,6 @@
 import 'dart:io';
-import '../../../usecase/create-product-usecase.dart';
+import '../../../usecase/product/create-product-usecase.dart';
+import '../utils/input-utils.dart';
 import '../view.dart';
 
 class CreateProductView extends View {
@@ -7,18 +8,26 @@ class CreateProductView extends View {
   render(Map<String, dynamic> context) {
     Stdin terminal = context['terminal'];
 
+    String name;
+    String description;
+    int value;
+
     print('- Novo Produto -');
 
-    print('\nNome:');
-    String name = terminal.readLineSync() ?? "";
+    do {
+      print('\nNome (pelo menos 3 caracteres):');
+      name = terminal.readLineSync() ?? '';
+    } while (name.length < 3);
 
-    print('Descrição:');
-    String description = terminal.readLineSync() ?? "";
+    print('Descrição (opcional):');
+    description = terminal.readLineSync() ?? '';
 
-    print('Valor:');
-    String value = terminal.readLineSync() ?? "";
+    do {
+      print('Valor (deve ser maior que 0):');
+      value = InputUtils.validadeInt(terminal.readLineSync());
+    } while (value <= 0);
 
-    Map<String, String> data = {
+    Map<String, dynamic> data = {
       'name': name,
       'description': description,
       'value': value,

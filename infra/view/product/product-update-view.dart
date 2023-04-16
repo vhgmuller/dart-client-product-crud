@@ -1,7 +1,8 @@
 import 'dart:io';
-import '../../../usecase/update-product-usecase.dart';
-import '../../../app/domain/product/entity.dart';
-import '../../../usecase/find-by-name-product-usecase.dart';
+import '../../../usecase/product/update-product-usecase.dart';
+import '../../../app/domain/product/product-entity.dart';
+import '../../../usecase/product/find-by-name-product-usecase.dart';
+import '../utils/input-utils.dart';
 import '../view.dart';
 
 class UpdateProductView extends View {
@@ -20,10 +21,10 @@ class UpdateProductView extends View {
     if (products.isEmpty) {
       print("\nNão foram encontrados produtos com o nome informado...");
     } else {
-      String? entry;
-      String name = '';
-      String description = '';
-      String value = '';
+      String entry;
+      String name;
+      String description;
+      int value;
 
       for (Product product in products) {
         int id = product.id;
@@ -47,10 +48,10 @@ class UpdateProductView extends View {
         }
 
         print('Valor:');
-        entry = terminal.readLineSync() ?? product.value;
+        entry = terminal.readLineSync() ?? '';
 
-        value = entry;
-        if (entry == '') {
+        value = InputUtils.validadeInt(entry);
+        if (value <= 0) {
           value = product.value;
         }
 

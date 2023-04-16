@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import '../../app/domain/product/service.dart';
+import '../../app/domain/product/product-service.dart';
 import '../../infra/view/app-view.dart';
 import '../../infra/view/view.dart';
 
