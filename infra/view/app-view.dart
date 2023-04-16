@@ -1,7 +1,9 @@
 import 'dart:io';
 
-import 'view.dart';
+import 'client/client-view.dart';
 import 'product/product-view.dart';
+import 'utils/input-utils.dart';
+import 'view.dart';
 
 class AppView extends View {
   @override
@@ -11,7 +13,7 @@ class AppView extends View {
     while (option != 3) {
       menu();
       print('\nEscolha uma das opções: ');
-      option = int.parse(terminal.readLineSync() ?? "0");
+      option = InputUtils.validadeInt(terminal.readLineSync());
       executeOption(option, context);
     }
   }
@@ -24,14 +26,12 @@ class AppView extends View {
   }
 
   executeOption(int option, context) {
-    ProductView product = new ProductView();
-
     switch (option) {
       case 1:
-        product.render(context);
+        ProductView().render(context);
         break;
       case 2:
-        //client.render(context);
+        ClientView().render(context);
         break;
       case 3:
         print('Bye bye =]');

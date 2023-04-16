@@ -4,12 +4,13 @@ class Product {
   String _description;
   int _value;
 
+  //Exemplo de construtor simplificado usando this. nos parâmetros
   Product(this._id, this._name, this._description, this._value);
 
   int get id => _id;
 
-  void set id(int newId) {
-    this._id = newId;
+  void set id(int id) {
+    this._id = id;
   }
 
   String get name => _name;

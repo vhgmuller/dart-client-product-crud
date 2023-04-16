@@ -1,4 +1,5 @@
 import 'dart:io';
+
 import '../../../usecase/product/update-product-usecase.dart';
 import '../../../app/domain/product/product-entity.dart';
 import '../../../usecase/product/find-by-name-product-usecase.dart';
@@ -13,15 +14,14 @@ class UpdateProductView extends View {
     print('- Atualizar Produto -');
 
     print('\nInforme o nome do produto que deseja atualizar:');
-    var search = terminal.readLineSync() ?? "";
+    var search = terminal.readLineSync() ?? '';
 
     List<Product> products =
         ProductFindByNameUseCase().execute({...context, 'search': search});
 
     if (products.isEmpty) {
-      print("\nNão foram encontrados produtos com o nome informado...");
+      print('\nNão foram encontrados produtos com o nome informado...');
     } else {
-      String entry;
       String name;
       String description;
       int value;
@@ -32,25 +32,22 @@ class UpdateProductView extends View {
         print(
             'Agora, informe apenas os campos que deseja ter a informação atualizada:');
         print('\nNovo nome:');
-        entry = terminal.readLineSync() ?? product.name;
+        name = terminal.readLineSync() ?? '';
 
-        name = entry;
-        if (entry == '') {
+        if (name == '') {
           name = product.name;
         }
 
         print('Descrição:');
-        entry = terminal.readLineSync() ?? product.description;
+        description = terminal.readLineSync() ?? '';
 
-        description = entry;
-        if (entry == '') {
+        if (description == '') {
           description = product.description;
         }
 
         print('Valor:');
-        entry = terminal.readLineSync() ?? '';
+        value = InputUtils.validadeInt(terminal.readLineSync());
 
-        value = InputUtils.validadeInt(entry);
         if (value <= 0) {
           value = product.value;
         }

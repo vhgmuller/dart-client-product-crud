@@ -1,4 +1,5 @@
 import 'package:collection/collection.dart';
+
 import 'product-entity.dart';
 
 class ProductService {

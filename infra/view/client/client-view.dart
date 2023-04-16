@@ -2,13 +2,13 @@ import 'dart:io';
 
 import '../utils/input-utils.dart';
 import '../view.dart';
-import 'product-create-view.dart';
-import 'product-find-by-name-view.dart';
-import 'product-list-view.dart';
-import 'product-update-view.dart';
-import 'product-delete-view.dart';
+import 'client-create-view.dart';
+import 'client-find-by-name-view.dart';
+import 'client-list-view.dart';
+import 'client-update-view.dart';
+import 'client-delete-view.dart';
 
-class ProductView extends View {
+class ClientView extends View {
   @override
   render(Map<String, dynamic> context) {
     var option = -1;
@@ -22,31 +22,31 @@ class ProductView extends View {
   }
 
   menu() {
-    print('- Produto -');
-    print('\n1 - Listar produtos');
-    print('2 - Cadastrar novo produto');
-    print('3 - Atualizar produto');
-    print('4 - Pesquisar produto');
-    print('5 - Apagar produto');
+    print('- Cliente -');
+    print('\n1 - Listar clientes');
+    print('2 - Cadastrar novo cliente');
+    print('3 - Atualizar cliente');
+    print('4 - Pesquisar cliente');
+    print('5 - Apagar cliente');
     print('6 - Voltar');
   }
 
   executeOption(int option, context) {
     switch (option) {
       case 1:
-        ListProductView().render(context);
+        ListClientView().render(context);
         break;
       case 2:
-        CreateProductView().render(context);
+        CreateClientView().render(context);
         break;
       case 3:
         UpdateProductView().render(context);
         break;
       case 4:
-        ProductFindByNameView().render(context);
+        ClientFindByNameView().render(context);
         break;
       case 5:
-        DeleteProductView().render(context);
+        DeleteClientView().render(context);
         break;
       case 6:
         break;

@@ -1,4 +1,5 @@
 import 'dart:io';
+
 import '../../../app/domain/product/product-entity.dart';
 import '../../../usecase/product/delete-product-usecase.dart';
 import '../../../usecase/product/find-by-id-product-usecase.dart';
@@ -18,7 +19,7 @@ class DeleteProductView extends View {
         ProductFindByIdUseCase().execute({...context, 'search': search});
 
     if (product == null) {
-      print("\nNão foram encontrados produtos com o ID informado...");
+      print('\nNão foram encontrados produtos com o ID informado...');
     } else {
       Map<String, int> data = {'id': product.id};
 

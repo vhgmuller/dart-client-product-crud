@@ -8,8 +8,8 @@ class ProductUpdateUseCase {
 
     int id = data[constantsUtils.ID];
 
-    String name = data[constantsUtils.NAME] ?? "",
-        description = data[constantsUtils.DESCRIPTION] ?? "";
+    String name = data[constantsUtils.NAME] ?? '',
+        description = data[constantsUtils.DESCRIPTION] ?? '';
     int value = data[constantsUtils.VALUE] ?? 0;
 
     ProductService service = context[constantsUtils.PRODUCT_SERVICE];
