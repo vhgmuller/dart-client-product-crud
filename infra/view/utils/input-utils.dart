@@ -34,7 +34,3 @@ class InputUtils {
     return inputLineSync;
   }
 }
-
-main() {
-  InputUtils.validadeCPF('08469626920');
-}
