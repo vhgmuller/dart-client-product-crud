@@ -29,16 +29,13 @@ Requisites used to create the project:
 
 
 ## Technologies used
----  
 In this project, only Dart technology was used, therefore, it will be necessary to run the application.  
 
 ## Usage
----  
 - Simple actions were implemented to carry out CRUD processes of products in memory.  
 - Simple actions were implemented to carry out CRUD processes of clients in memory.
 
 ## Installation
----
 Clone the repositorie to the machine and execute the following commands.  
 
 This command gets all the dependencies listed in the pubspec.yaml file in the current working directory, as well as their transitive dependencies:
